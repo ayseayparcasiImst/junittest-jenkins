@@ -17,6 +17,8 @@ pipeline {
                 sh 'chmod +r .mvn'
                 sh 'chmod +r mvnw'
                 sh 'chmod +r mvnw.cmd'
+                sh 'chmod +x mvnw'
+                sh 'chmod +x ./mvnw'
                 sh './mvnw test'
                 // bat '.\\mvnw test'
             }
