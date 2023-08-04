@@ -13,6 +13,8 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'chmod +r pom.xml'
+                sh 'chmod +r .mvn'
                 sh './mvnw test'
                 // bat '.\\mvnw test'
             }
