@@ -19,11 +19,7 @@ pipeline {
                 // bat '.\\mvnw test'
             }
 
-            post {
-                always {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                }
-            }
+
         }
     }
 }
