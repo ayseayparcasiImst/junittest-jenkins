@@ -15,8 +15,15 @@ pipeline {
             steps {
                 sh 'chmod +r pom.xml'
                 sh 'chmod +r .mvn'
+                sh 'chmod +r mvnw'
+                sh 'chmod +r mvnw.cmd'
                 sh './mvnw test'
                 // bat '.\\mvnw test'
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                }
             }
 
 
